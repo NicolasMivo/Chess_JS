@@ -647,11 +647,14 @@ alert("white player won");
 function RedirectPiece(posInitial, posFinal, value){
    control = 0;
 if(value == true || value == null){
-   if(temp.substring(1,temp.length) == "king"){
-      Clear();
-}
+   
  whitePlayerTurn = !(whitePlayerTurn);
  let temp =  document.getElementById(posInitial).className;
+ if(document.getElementById(posFinal).className.substring(1,document.getElementById(posFinal).className.length) 
+ == "king")
+ {
+   Clear();
+}
  document.getElementById(posInitial).classList.remove(temp);
  if(document.getElementById(posFinal).className !== ""){
  document.getElementById(posFinal).classList.remove(document.getElementById(posFinal).className);
